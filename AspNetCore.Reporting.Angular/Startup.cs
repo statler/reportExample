@@ -97,6 +97,7 @@ namespace AspNetCore.Reporting.Angular {
             app.UseAuthentication();
             app.UseIdentityServer();
             app.UseAuthorization();
+            app.UseMiddleware<RequestDiagnosticsMiddleware>();
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute(
                     name: "default",
